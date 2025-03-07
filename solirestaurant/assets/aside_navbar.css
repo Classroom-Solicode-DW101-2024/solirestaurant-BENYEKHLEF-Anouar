@@ -1,0 +1,132 @@
+:root {
+  --primary-color: #9E6752;
+  --secondary-bg: #ecf0f1;
+  --text-dark: #333;
+  --text-light: #666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.2;
+}
+
+body {
+  display: flex;
+  background-image: url('https://img.freepik.com/photos-gratuite/ciment-texture_1194-5332.jpg?t=st=1739881112~exp=1739884712~hmac=daef3dcb8e3815a498217410e4c6612834620e23eb65184d02fcb7d818aaa62b&w=826');
+  background-position: center;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+/* */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 2px solid var(--primary-color);
+  transform: translateY(60px);
+}
+
+.user-profile svg {
+  width: 50px;
+  height: 50px;
+  margin-right: 2px;
+}
+
+.user-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.user-info h4 span {
+  color: var(--primary-color);
+}
+
+.user-info p {
+  font-size: 12px;
+  color: #bdc3c7;
+  margin-top: 5px;
+}
+
+.sidebar.collapsed .user-info h4,
+.sidebar.collapsed .user-info p {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-nav {
+  padding-top: 20px;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 5px 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-left 0.3s ease;
+  border-left: 4px solid transparent;
+  transform: translateY(40px);
+}
+
+.nav-link:hover {
+  background-color: #34495e;
+  border-left-color: var(--primary-color);
+}
+
+.nav-link i {
+  margin-right: 15px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar.collapsed .nav-link span {
+  opacity: 0;
+}
+
+.sidebar.collapsed .nav-link {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.sidebar.collapsed .nav-link #home {
+  margin-right: 0;
+  margin-left: 60px;
+}
+
+.sidebar.collapsed .nav-link #logout {
+  margin-right: 0;
+  margin-left: 95px;
+}
+
+.sidebar.collapsed .nav-link #client {
+  margin-right: 0;
+  margin-left: 35px;
+}

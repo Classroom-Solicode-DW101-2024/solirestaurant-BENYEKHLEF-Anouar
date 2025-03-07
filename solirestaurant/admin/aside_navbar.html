@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../assets/images/fav-icon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/aside_navbar.css?php echo time(); ?>">
+    <link
+        href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="user-profile">
+            <i class="fa-solid fa-user-tie" style="color: #ffffff; zoom: 2; margin-right: 5px;"></i>
+            <div class="user-info">
+                <h4><span>Admin</span></h4>
+                <p><span>Administrateur</span></p>
+            </div>
+
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="admin_dashboard.php" class="nav-link">
+                        <i class="fa fa-home" id="home"></i>
+                        <span>Statistics</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="client_dashboard.php" class="nav-link">
+                        <i class="fa-solid fa-user-group" id="client"></i>
+                        <span>Client</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="admin_logout.php" class="nav-link">
+                        <i class="fa-solid fa-right-from-bracket" id="logout"></i>
+                        <span>Déconnexion</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <button class="toggle-button">
+            <i class="fa fa-bars"></i>
+        </button>
+
+    </aside>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            const toggleButton = document.querySelector('.toggle-button');
+            const dateFilterForm = document.getElementById('dateFilterForm');
+
+            // Load the saved state from localStorage
+            const savedState = localStorage.getItem('sidebarState');
+            if (savedState === 'collapsed') {
+                sidebar.classList.add('collapsed');
+                mainContent.classList.add('collapsed');
+            } else {
+                sidebar.classList.remove('collapsed');
+                mainContent.classList.remove('collapsed');
+            }
+
+            // Toggle the sidebar and save the state
+            toggleButton.addEventListener('click', () => {
+                sidebar.classList.toggle('collapsed');
+                mainContent.classList.toggle('collapsed');
+
+                // Save the new state to localStorage
+                if (sidebar.classList.contains('collapsed')) {
+                    localStorage.setItem('sidebarState', 'collapsed');
+                } else {
+                    localStorage.setItem('sidebarState', 'expanded');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

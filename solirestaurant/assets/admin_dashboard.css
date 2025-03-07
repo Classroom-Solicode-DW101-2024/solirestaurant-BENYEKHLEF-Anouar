@@ -1,0 +1,235 @@
+:root {
+  --primary-color: #9E6752;
+  --secondary-bg: #ecf0f1;
+  --text-dark: #333;
+  --text-light: #666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.2;
+}
+
+body {
+  display: flex;
+  background-image: url('https://img.freepik.com/photos-gratuite/ciment-texture_1194-5332.jpg?t=st=1739881112~exp=1739884712~hmac=daef3dcb8e3815a498217410e4c6612834620e23eb65184d02fcb7d818aaa62b&w=826');
+  background-position: center;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+/*  */
+.main-content {
+  margin-left: 250px;
+  padding: 20px 5rem;
+  width: calc(100% - 250px);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 100vh;
+}
+
+.main-content.collapsed {
+  margin-left: 70px;
+  width: calc(100% - 70px);
+}
+
+.main-content h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  margin-bottom: 55px;
+  margin-top: 20px;
+}
+
+.main-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+}
+
+.main-content h2::after {
+  content: "";
+  width: 100px;
+  height: 2px;
+  background: var(--primary-color);
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* */
+.toggle-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+  color: var(--text-dark);
+}
+
+.update-form select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.update-form button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+}
+
+.update-form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #9E6752, #7e4f40);
+}
+
+/* */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 200px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card h3 {
+  color: var(--primary-color);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/*  */
+.date-filter-form {
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.date-filter-form label {
+  margin-right: 10px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.date-filter-form input[type="date"] {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.date-filter-form input[type="date"]:hover,
+.date-filter-form input[type="date"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.filter-button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.filter-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #9E6752, #7e4f40);
+}
+
+#reminder {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 30px;
+
+}
+
+.emptyWarning {
+  text-align: center; 
+  margin-bottom: 60px;
+  margin-top: 40px;
+}
